@@ -1,0 +1,1539 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System" xmlns:sg="clr-namespace:System.Globalization;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1104.8,1341.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="41">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Import&quot;TLTddmmyyyy&quot; files to table &quot;TLT_APPSUBMIT&quot; (S184)" sap:VirtualizedContainerService.HintSize="775.2,1276.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart sap:VirtualizedContainerService.HintSize="733.6,1184" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="s:Exception" Name="SystemError" />
+        <Variable x:TypeArguments="x:Boolean" Name="Isproduct" />
+        <Variable x:TypeArguments="s:DateTime" Name="ProcessStartTime" />
+        <Variable x:TypeArguments="x:String" Default="\\GENTH-WINAPP\GL Audit Reports\RPA\Configuration\CHA01-2_LF_APPSUBMITFile\" Name="ConfigFolder" />
+        <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="Config" />
+        <Variable x:TypeArguments="x:String" Name="SMTPPassword" />
+        <Variable x:TypeArguments="ss:SecureString" Name="SMTPPassword1" />
+        <Variable x:TypeArguments="x:Int32" Name="SMTPPort" />
+        <Variable x:TypeArguments="x:String" Name="SMTPServer" />
+        <Variable x:TypeArguments="x:String" Name="SMTPUsername" />
+        <Variable x:TypeArguments="sg:CultureInfo" Name="CultureInfo" />
+        <Variable x:TypeArguments="s:String[]" Name="AllFiles" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_TLTdata" />
+        <Variable x:TypeArguments="x:String" Name="SystemErrorRemark" />
+        <Variable x:TypeArguments="x:String" Name="BusinessException" />
+        <Variable x:TypeArguments="x:Int32" Name="FilesIndex" />
+        <Variable x:TypeArguments="x:String" Name="TLTFilesPath_input" />
+        <Variable x:TypeArguments="si:FileInfo[]" Name="arr_InputFileInfo" />
+        <Variable x:TypeArguments="si:DirectoryInfo" Name="direcInfo_input" />
+        <Variable x:TypeArguments="x:Int32" Name="int_FileNo" />
+        <Variable x:TypeArguments="x:String" Name="SQLQuery_SelectPolicyApp" />
+        <Variable x:TypeArguments="sd1:Process" Name="Excel" />
+        <Variable x:TypeArguments="ui:DatabaseConnection" Name="DBConnect" />
+        <Variable x:TypeArguments="sd:DataRow" Name="row" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_dbtablePolicyApp" />
+        <Variable x:TypeArguments="x:String" Name="SQLQuery_import" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_importtoAPPSUBMIT" />
+        <Variable x:TypeArguments="x:String" Name="ConfigFilePath" />
+        <Variable x:TypeArguments="x:Boolean" Name="bool_isSystemError" />
+        <Variable x:TypeArguments="x:String" Name="errorMessage" />
+        <Variable x:TypeArguments="x:String" Name="fileName" />
+        <Variable x:TypeArguments="x:Boolean" Name="CheckFIileExists" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_filterStatus" />
+        <Variable x:TypeArguments="x:Boolean" Name="IsValid_PolicyNo" />
+        <Variable x:TypeArguments="x:String" Name="SQLQuery_checkContractNo" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_dbContractNo" />
+        <Variable x:TypeArguments="x:Boolean" Name="IsValid_AppNo" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_dbtablePolicy" />
+        <Variable x:TypeArguments="x:String" Name="fileNameWithoutExtension" />
+        <Variable x:TypeArguments="x:String" Name="TempFilePath" />
+      </Flowchart.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+          <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,157.6</av:PointCollection>
+          <x:Double x:Key="Height">1147.1999999999998</x:Double>
+          <x:Double x:Key="Width">700</x:Double>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Flowchart.StartNode>
+        <x:Reference>__ReferenceID5</x:Reference>
+      </Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID5">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,157.6</av:Point>
+            <av:Size x:Key="ShapeSize">200,144.8</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,302.4 300,377.6</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence sap2010:Annotation.AnnotationText="1. Read config&#xA;2. Get SMTP Asset&#xA;3. Send process start mail to user" DisplayName="[0]. - Initialization" sap:VirtualizedContainerService.HintSize="200,144.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="647.2,2392.8" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+            <TryCatch.Try>
+              <Sequence sap:VirtualizedContainerService.HintSize="610.4,1724" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Initial system error" sap:VirtualizedContainerService.HintSize="568.8,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:Exception">[SystemError]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Assign Is product?" sap:VirtualizedContainerService.HintSize="568.8,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[Isproduct]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:LogMessage DisplayName="Show message is product?" sap:VirtualizedContainerService.HintSize="568.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Is product? =&quot; + Isproduct.ToString]" />
+                <Assign DisplayName="Assign process start time" sap:VirtualizedContainerService.HintSize="568.8,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:DateTime">[ProcessStartTime]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:DateTime">[Now]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[Isproduct = False]" DisplayName="Check environment to assign config folder" sap:VirtualizedContainerService.HintSize="568.8,219.2" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Then>
+                    <Assign DisplayName="Assign config path (Dev)" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[ConfigFilePath]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[ConfigFolder+"Configuration\Dev\"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Then>
+                  <If.Else>
+                    <Assign DisplayName="Assign config path (Prod)" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[ConfigFilePath]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[ConfigFolder+"Configuration\Prod\"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Else>
+                </If>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Initial config" sap:VirtualizedContainerService.HintSize="568.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\ExceltoDict.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Constants(APPSUBMIT)"}]</InArgument>
+                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_Config">[Config]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">[ConfigFilePath + "Config.xlsx"]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <Sequence DisplayName="Get SMTP asset" sap:VirtualizedContainerService.HintSize="568.8,632" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[Config(&quot;Asset_SMTP_RobotMail&quot;).ToString]" DisplayName="Get SMTP Credential" sap:VirtualizedContainerService.HintSize="443.2,80.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[SMTPPassword1]" Username="[SMTPUsername]" />
+                  <Assign DisplayName="Assign SMTP Password" sap:VirtualizedContainerService.HintSize="443.2,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[SMTPPassword]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[New System.Net.NetworkCredential(string.empty, SMTPPassword1).Password]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[Config(&quot;Asset_SMTP_Port&quot;).ToString]" DisplayName="Get SMTP port" sap:VirtualizedContainerService.HintSize="443.2,139.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+                    <ui:GetRobotAsset.Value>
+                      <OutArgument x:TypeArguments="x:Int32">[SMTPPort]</OutArgument>
+                    </ui:GetRobotAsset.Value>
+                  </ui:GetRobotAsset>
+                  <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[Config(&quot;Asset_SMTP_Server&quot;).ToString]" DisplayName="Get SMTP server" sap:VirtualizedContainerService.HintSize="443.2,139.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
+                    <ui:GetRobotAsset.Value>
+                      <OutArgument x:TypeArguments="x:String">[SMTPServer]</OutArgument>
+                    </ui:GetRobotAsset.Value>
+                  </ui:GetRobotAsset>
+                </Sequence>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendStartMail workflow" sap:VirtualizedContainerService.HintSize="568.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\NotiEmail\SendStartMail.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFolder">[ConfigFilePath]</InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Config">[Config]</InArgument>
+                    <InArgument x:TypeArguments="sg:CultureInfo" x:Key="in_ThisCultureInfo">[CultureInfo]</InArgument>
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_SMTPPort">[SMTPPort]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SMTPServer">[SMTPServer]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SMTPUsername">[SMTPUsername]</InArgument>
+                    <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SMTPPassword">[SMTPPassword1]</InArgument>
+                    <InArgument x:TypeArguments="s:DateTime" x:Key="in_DateTime_ProcessStart">[ProcessStartTime]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </Sequence>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="613.6,356" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,285.6" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Assign system error" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="s:Exception">[SystemError]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;0. Initialization has error: &quot; + exception.Message + &quot; | Source: &quot; + exception.Source]" />
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+        </Sequence>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID0">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">200,377.6</av:Point>
+                <av:Size x:Key="ShapeSize">200,112.8</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,490.4 300,574.4</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence sap2010:Annotation.AnnotationText="1. Access shareDrive path&#xA;2. Get input files" DisplayName="[1] - Get APPSUBMIT files " sap:VirtualizedContainerService.HintSize="200,112.8" sap2010:WorkflowViewState.IdRef="Sequence_25">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="715.2,2757.6" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <Sequence sap:VirtualizedContainerService.HintSize="678.4,2088.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="636.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;1. Get file from sharedrive process start &quot;]" />
+                    <Assign DisplayName="Assign reset system error" sap:VirtualizedContainerService.HintSize="636.8,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="s:Exception">[SystemError]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Assign reset system error remark" sap:VirtualizedContainerService.HintSize="636.8,60" sap2010:WorkflowViewState.IdRef="Assign_32">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[SystemErrorRemark]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Assign reset business error" sap:VirtualizedContainerService.HintSize="636.8,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[BusinessException]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:RemoveLogFields DisplayName="Remove Log Fields" sap:VirtualizedContainerService.HintSize="636.8,22.4" sap2010:WorkflowViewState.IdRef="RemoveLogFields_2">
+                      <ui:RemoveLogFields.Fields>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                      </ui:RemoveLogFields.Fields>
+                    </ui:RemoveLogFields>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="636.8,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_156">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_105" />
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                    </ui:CommentOut>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="636.8,796.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="601.6,718.4" sap2010:WorkflowViewState.IdRef="Sequence_157">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="560,625.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+                            <ui:ForEach.Body>
+                              <ActivityAction x:TypeArguments="x:Object">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,491.2" sap2010:WorkflowViewState.IdRef="Sequence_155">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If sap:VirtualizedContainerService.HintSize="483.2,398.4" sap2010:WorkflowViewState.IdRef="If_37">
+                                    <If.Then>
+                                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="306.4,219.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+                                        <ui:ForEach.Body>
+                                          <ActivityAction x:TypeArguments="x:Object">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,84.8" sap2010:WorkflowViewState.IdRef="Sequence_154">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ui:ForEach.Body>
+                                      </ui:ForEach>
+                                    </If.Then>
+                                  </If>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:ForEach.Body>
+                          </ui:ForEach>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                    </ui:CommentOut>
+                    <Assign DisplayName="Assign iput directory" sap:VirtualizedContainerService.HintSize="636.8,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="si:DirectoryInfo">[direcInfo_input]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="si:DirectoryInfo">[new DirectoryInfo(config("TLTFilesPath_Input").ToString.Trim)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Assign array of TLT file in TLTFilesPath" sap:VirtualizedContainerService.HintSize="636.8,60" sap2010:WorkflowViewState.IdRef="Assign_38">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="si:FileInfo[]">[arr_InputFileInfo]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="si:FileInfo[]">[direcInfo_input.GetFiles( )]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="636.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;[1] - Total files: &quot; + arr_InputFileInfo.Count.Tostring]" />
+                    <Assign DisplayName="Assign min transaction no." sap:VirtualizedContainerService.HintSize="636.8,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[int_FileNo]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="681.6,356" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence sap:VirtualizedContainerService.HintSize="375.2,285.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="s:Exception">[SystemError]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;[1] - Get APPSUBMIT files &quot; + SystemError.Message + &quot; | Source: &quot; + SystemError.Source]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+            </Sequence>
+            <FlowStep.Next>
+              <FlowDecision x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Check file exist in path." Condition="[arr_InputFileInfo.Count &gt; 0]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="132.8,131.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <av:Point x:Key="ShapeLocation">233.6,574.4</av:Point>
+                    <av:Size x:Key="ShapeSize">132.8,131.2</av:Size>
+                    <av:PointCollection x:Key="TrueConnector">233.6,640 100,640 100,679.6</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">366.4,640 520,640 520,669.6</av:PointCollection>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <FlowDecision.True>
+                  <FlowStep x:Name="__ReferenceID3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">0,679.6</av:Point>
+                        <av:Size x:Key="ShapeSize">200,68.8</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">100,748.4 100,835.6</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence sap2010:Annotation.AnnotationText="Have file in path&#xA;1. read file&#xA;2. Check&#xA;3. import data to table TLT_APPSUBMIT (1 file = 1 loop)&#xA;4. move file to folder complete/error&#xA;5. send mail&#xA;6. disconnect DB&#xA;" DisplayName="[2.] - Import TLT files to Database" sap:VirtualizedContainerService.HintSize="5507.2,7740" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="5465.6,7647.2" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                        <TryCatch.Try>
+                          <Sequence sap:VirtualizedContainerService.HintSize="5428.8,7201.6" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign DisplayName="Assign array to collect TLT file in path" sap:VirtualizedContainerService.HintSize="5387.2,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="s:String[]">[AllFiles]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Config("TLTFilesPath_Input").ToString, "TLT*").ToArray]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign DisplayName="Initial file index: start with index 0" sap:VirtualizedContainerService.HintSize="5387.2,60" sap2010:WorkflowViewState.IdRef="Assign_43">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Int32">[FilesIndex]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:InterruptibleWhile DisplayName="process of each TLT file" sap:VirtualizedContainerService.HintSize="5387.2,6693.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                              <ui:InterruptibleWhile.Body>
+                                <Sequence DisplayName="read and insert data" sap:VirtualizedContainerService.HintSize="5352,6526.4" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:String" Name="SQL_updatetoNULL" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="5310.4,488" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <WriteLine DisplayName="show file which robot is reading" sap:VirtualizedContainerService.HintSize="333.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[AllFiles(FilesIndex)]" />
+                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_57">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[fileName]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[Path.GetFileName(AllFiles(FilesIndex))]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_107">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[fileNameWithoutExtension]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">[Path.GetFileNameWithoutExtension(AllFiles(FilesIndex))]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[fileName]" />
+                                  </Sequence>
+                                  <Delay DisplayName="Delay for 5 sec" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="5310.4,22.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Read TLT file" sap:VirtualizedContainerService.HintSize="5310.4,447.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[AllFiles(FilesIndex)]">
+                                    <ui:ExcelApplicationScope.Body>
+                                      <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                        </ActivityAction.Argument>
+                                        <Sequence sap2010:Annotation.AnnotationText="1. read file (collect in datatable: dt_TLTdata)&#xA;2. Remove unwanted column (modify column in datatable: dt_TLTdata)" sap:VirtualizedContainerService.HintSize="375.2,337.6" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:String" Name="Status" />
+                                          </Sequence.Variables>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:ExcelReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_TLTdata]" DisplayName="assign sheet for reading" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" SheetName="[Config(&quot;SheetName&quot;).ToString]">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:ExcelReadRange>
+                                          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Status" DataTable="[dt_TLTdata]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+                                          <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Process Date" DataTable="[dt_TLTdata]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:ExcelApplicationScope.Body>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:ExcelApplicationScope>
+                                  <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="5310.4,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_4" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=GT-CRC-S184;Initial Catalog=DM_ALT;Integrated Security=True;Encrypt=False" DatabaseConnection="[DBConnect]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:DatabaseConnect>
+                                  <Assign sap:VirtualizedContainerService.HintSize="5310.4,60" sap2010:WorkflowViewState.IdRef="Assign_63">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[bool_isSystemError]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_TLTdata]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="5310.4,2894.4" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+                                    <ui:ForEachRow.Body>
+                                      <ActivityAction x:TypeArguments="sd:DataRow">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="5276.8,2773.6" sap2010:WorkflowViewState.IdRef="Sequence_185">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="5235.2,2680.8" sap2010:WorkflowViewState.IdRef="Sequence_184">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:IsMatch sap2010:Annotation.AnnotationText="Check policy_no is 8 digits of number" BuilderPattern="^\d{8}$" DisplayName="Is Match" sap:VirtualizedContainerService.HintSize="5193.6,91.2" sap2010:WorkflowViewState.IdRef="IsMatch_4" Input="[row(&quot;กรมธรรม์&quot;).ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;^\\d{8}$&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="^\d{8}$" RegexOption="IgnoreCase" Result="[IsValid_PolicyNo]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:IsMatch>
+                                            <If sap2010:Annotation.AnnotationText="When Policy No is 8 digits of number.&#xA;then check App No is start with Contract No?" Condition="[IsValid_PolicyNo]" sap:VirtualizedContainerService.HintSize="5193.6,2425.6" sap2010:WorkflowViewState.IdRef="If_48">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If.Then>
+                                                <Sequence sap2010:Annotation.AnnotationText="Policy No is contains 8 digits of number." sap:VirtualizedContainerService.HintSize="2830.4,2222.4" sap2010:WorkflowViewState.IdRef="Sequence_174">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:IsMatch sap2010:Annotation.AnnotationText="Check APP_NO is start with CONTRACT_NO(loan no)" DisplayName="Is Match" sap:VirtualizedContainerService.HintSize="2788.8,91.2" sap2010:WorkflowViewState.IdRef="IsMatch_5" Input="[row(&quot;Application No&quot;).ToString]" IsBuilderTabModified="False" Pattern="[&quot;^&quot;+ row(&quot;Loan No&quot;).ToString]" RegexOption="IgnoreCase, Compiled" Result="[IsValid_AppNo]">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:IsMatch>
+                                                  <If sap2010:Annotation.AnnotationText="" Condition="[IsValid_AppNo]" sap:VirtualizedContainerService.HintSize="2788.8,1967.2" sap2010:WorkflowViewState.IdRef="If_43">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <If.Then>
+                                                      <Sequence sap2010:Annotation.AnnotationText=" When Policy No is 8 digits of number and App No starts with Contract No." sap:VirtualizedContainerService.HintSize="1397.6,1808" sap2010:WorkflowViewState.IdRef="Sequence_168">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:ReadTextFile Content="[SQLQuery_SelectPolicyApp]" DisplayName="Read Text File" FileName="[Config(&quot;SelectPolicy_AppfromAPPSUBMIT.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="1356,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_21" />
+                                                        <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_dbtablePolicyApp]" DisplayName="Run query" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="1356,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_14" Sql="[SQLQuery_SelectPolicyApp]">
+                                                          <ui:ExecuteQuery.Parameters>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="@POLICYNO">[row("กรมธรรม์").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="@APPNO">[row("Application No").ToString]</InArgument>
+                                                          </ui:ExecuteQuery.Parameters>
+                                                        </ui:ExecuteQuery>
+                                                        <If sap2010:Annotation.AnnotationText="Check Policy No, App No is exists in table TLT_APPSUBMIT yet?&#xA;&#xA;1. TRUE if Policy No, App No does not exists in DB (no dup)&#xA;2. FALSE if Policy No, App No was exists in DB (dup)" Condition="[dt_dbtablePolicyApp.Rows.Count = 0]" sap:VirtualizedContainerService.HintSize="1356,1433.6" sap2010:WorkflowViewState.IdRef="If_40">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <If.Then>
+                                                            <Sequence sap2010:Annotation.AnnotationText="1.Import datatable to table TLT_APPSUBMIT&#xA;2. Stamp column &quot;Status&quot; is Complete in file TLT&#xA;3. Stamp column &quot;Process Date&quot; is now in file TLT" sap:VirtualizedContainerService.HintSize="425.6,696" sap2010:WorkflowViewState.IdRef="Sequence_164">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:ReadTextFile Content="[SQLQuery_import]" DisplayName="Read Text File" FileName="[Config(&quot;AddTLTFilesDatatoAPPSUBMIT.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="384,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_22" />
+                                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Import to TLT_APPSUBMIT table" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="384,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_15" Sql="[SQLQuery_import]">
+                                                                <ui:ExecuteNonQuery.Parameters>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="@POLICYNO">[row("กรมธรรม์").ToString]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="@APPNO">[row("Application No").ToString]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="@CONTRACTNO">[row("Loan No").ToString]</InArgument>
+                                                                  <InArgument x:TypeArguments="s:DateTime" x:Key="@SCANDATE">[DateTime.ParseExact(row("วันที่วางงานทีมสแกน").ToString, Config("Scandate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                  <InArgument x:TypeArguments="s:DateTime" x:Key="@APPDATE">[DateTime.ParseExact(row("วันที่รับแอพ").ToString, Config("Appdate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                </ui:ExecuteNonQuery.Parameters>
+                                                              </ui:ExecuteNonQuery>
+                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;[2.] - Transaction status: Sucess| Import Policy No &quot;+ row(&quot;กรมธรรม์&quot;).ToString + &quot;, Application No &quot;+ row(&quot;Application No&quot;).ToString  + &quot; to TLT_APPSUBMIT successfully.&quot;]" />
+                                                              <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_109">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">["Complete: Import Poicy No " + row("กรมธรรม์").ToString + " to database table [TLT_APPSUBMIT] successfully."]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_110">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                            </Sequence>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Sequence sap2010:Annotation.AnnotationText="1. Assign detailed error message&#xA;2. Stamp column &quot;Status&quot; is error in file TLT&#xA;3. Stamp column &quot;Process Date&quot; is now in file TLT " sap:VirtualizedContainerService.HintSize="886.4,1198.4" sap2010:WorkflowViewState.IdRef="Sequence_167">
+                                                              <Sequence.Variables>
+                                                                <Variable x:TypeArguments="x:String" Name="SQLQuery_AppNoisNA" />
+                                                                <Variable x:TypeArguments="sd:DataTable" Name="dt_dbAppisNA" />
+                                                                <Variable x:TypeArguments="x:String" Name="SQLQuery_Update" />
+                                                              </Sequence.Variables>
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:ReadTextFile Content="[SQLQuery_AppNoisNA]" DisplayName="Read Text File" FileName="[Config(&quot;SelectPolicyNowhereAppNoisNA.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="844.8,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_23" />
+                                                              <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_dbAppisNA]" DisplayName="Run query" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="844.8,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_15" Sql="[SQLQuery_AppNoisNA]">
+                                                                <ui:ExecuteQuery.Parameters>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="@POLICYNO">[row("กรมธรรม์").ToString]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="@APPNO">[row("Application No").ToString]</InArgument>
+                                                                </ui:ExecuteQuery.Parameters>
+                                                              </ui:ExecuteQuery>
+                                                              <If Condition="[dt_dbAppisNA.Rows.Count = 0]" sap:VirtualizedContainerService.HintSize="844.8,795.2" sap2010:WorkflowViewState.IdRef="If_39">
+                                                                <If.Then>
+                                                                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,485.6" sap2010:WorkflowViewState.IdRef="Sequence_188">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;[2.] - Transaction status: Business error| &quot; + row(&quot;กรมธรรม์&quot;).ToString+ &quot; already have record in table [TLT_APPSUBMIT].&quot;]" />
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_111">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">["Error: Policy No. "+ row("กรมธรรม์").ToString+ " already have record in table [TLT_APPSUBMIT]."]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_112">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[errorMessage]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_113">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                  </Sequence>
+                                                                </If.Then>
+                                                                <If.Else>
+                                                                  <Sequence sap:VirtualizedContainerService.HintSize="425.6,636" sap2010:WorkflowViewState.IdRef="Sequence_165">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:ReadTextFile Content="[SQLQuery_Update]" DisplayName="Read Text File" FileName="[Config(&quot;UpdateData.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="384,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_24" />
+                                                                    <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Run command" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="384,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_16" Sql="[SQLQuery_Update]">
+                                                                      <ui:ExecuteNonQuery.Parameters>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="@POLICYNO">[row("กรมธรรม์").ToString]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="@APPNO">[row("Application No").ToString]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="@CONTRACTNO">[row("Loan No").ToString]</InArgument>
+                                                                        <InArgument x:TypeArguments="s:DateTime" x:Key="@SCANDATE">[DateTime.ParseExact(row("วันที่วางงานทีมสแกน").ToString, Config("Scandate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                        <InArgument x:TypeArguments="s:DateTime" x:Key="@APPDATE">[DateTime.ParseExact(row("วันที่รับแอพ").ToString, Config("Appdate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                      </ui:ExecuteNonQuery.Parameters>
+                                                                    </ui:ExecuteNonQuery>
+                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="Info" Message="[&quot;[2.] - Transaction status: Success| update Poicy No &quot; + row(&quot;กรมธรรม์&quot;).ToString + &quot; to database table [TLT_APPSUBMIT] successfully.&quot;]" />
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_135">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">["Complete: Update Poicy No " + row("กรมธรรม์").ToString + " to database table [TLT_APPSUBMIT] successfully."]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_136">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                  </Sequence>
+                                                                </If.Else>
+                                                              </If>
+                                                            </Sequence>
+                                                          </If.Else>
+                                                        </If>
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence sap2010:Annotation.AnnotationText="When Policy No is 8 digits of number and App No doesn't starts with Contract No." sap:VirtualizedContainerService.HintSize="1347.2,1541.6" sap2010:WorkflowViewState.IdRef="Sequence_173">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If Condition="[row(&quot;Application No&quot;).ToString.Equals(&quot;NA&quot;) or row(&quot;Application No&quot;).ToString.Equals(&quot;#N/A&quot;)]" sap:VirtualizedContainerService.HintSize="1305.6,1417.6" sap2010:WorkflowViewState.IdRef="If_42">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <If.Then>
+                                                            <Sequence sap2010:Annotation.AnnotationText="When Policy No is 8 digits of number and Application No is NA or #N/A value.&#xA;1. check duplicate of Policy No" sap:VirtualizedContainerService.HintSize="886.4,1258.4" sap2010:WorkflowViewState.IdRef="Sequence_171">
+                                                              <Sequence.Variables>
+                                                                <Variable x:TypeArguments="x:String" Name="SQLQuery_SelectPolicy" />
+                                                              </Sequence.Variables>
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:ReadTextFile Content="[SQLQuery_SelectPolicy]" DisplayName="Read Text File" FileName="[Config(&quot;SelectPolicyNo.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="844.8,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_25" />
+                                                              <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_dbtablePolicy]" DisplayName="Run query" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="844.8,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_16" Sql="[SQLQuery_SelectPolicy]">
+                                                                <ui:ExecuteQuery.Parameters>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="@POLICYNO">[row("กรมธรรม์").ToString]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="@APPNO">[row("Application No").ToString]</InArgument>
+                                                                </ui:ExecuteQuery.Parameters>
+                                                              </ui:ExecuteQuery>
+                                                              <If Condition="[dt_dbtablePolicy.Rows.Count = 0]" sap:VirtualizedContainerService.HintSize="844.8,871.2" sap2010:WorkflowViewState.IdRef="If_41">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <If.Then>
+                                                                  <Sequence sap2010:Annotation.AnnotationText="Policy No is not exists in TLT_APPSUBMIT yet, then&#xA;1.Import datatable to table TLT_APPSUBMIT&#xA;2. Stamp column &quot;Status&quot; is Complete in file TLT&#xA;3. Stamp column &quot;Process Date&quot; is now in file TLT" sap:VirtualizedContainerService.HintSize="425.6,712" sap2010:WorkflowViewState.IdRef="Sequence_169">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:ReadTextFile Content="[SQLQuery_import]" DisplayName="Read Text File" FileName="[Config(&quot;AddTLTFilesDatatoAPPSUBMIT.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="384,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_26" />
+                                                                    <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Import to TLT_APPSUBMIT table" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="384,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_17" Sql="[SQLQuery_import]">
+                                                                      <ui:ExecuteNonQuery.Parameters>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="@POLICYNO">[row("กรมธรรม์").ToString]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="@APPNO">[row("Application No").ToString]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="@CONTRACTNO">[row("Loan No").ToString]</InArgument>
+                                                                        <InArgument x:TypeArguments="s:DateTime" x:Key="@SCANDATE">[DateTime.ParseExact(row("วันที่วางงานทีมสแกน").ToString, Config("Scandate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                        <InArgument x:TypeArguments="s:DateTime" x:Key="@APPDATE">[DateTime.ParseExact(row("วันที่รับแอพ").ToString, Config("Appdate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                      </ui:ExecuteNonQuery.Parameters>
+                                                                    </ui:ExecuteNonQuery>
+                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="Info" Message="[&quot;[2.] - Transaction status: Success| Import Policy No &quot;+ row(&quot;กรมธรรม์&quot;).ToString + &quot;, Application No &quot;+ row(&quot;Application No&quot;).ToString  + &quot; to TLT_APPSUBMIT successfully.&quot;]" />
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_114">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">["Complete: Import data of Poicy No " + row("กรมธรรม์").ToString + " success."]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_115">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                  </Sequence>
+                                                                </If.Then>
+                                                                <If.Else>
+                                                                  <Sequence sap2010:Annotation.AnnotationText="This Policy No is exists in table TLT_APPSUBMIT. and Application No is &quot;NA&quot; or &quot;#N/A&quot; value." sap:VirtualizedContainerService.HintSize="375.2,529.6" sap2010:WorkflowViewState.IdRef="Sequence_170">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;[2.] - Transaction status: Business error| &quot; + row(&quot;กรมธรรม์&quot;).ToString+ &quot; already have record in table [TLT_APPSUBMIT].&quot;]" />
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_116">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">["Error: "+ row("กรมธรรม์").ToString+ " already have record in table [TLT_APPSUBMIT]."]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_117">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[errorMessage]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_118">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                  </Sequence>
+                                                                </If.Else>
+                                                              </If>
+                                                            </Sequence>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Sequence sap2010:Annotation.AnnotationText="(When Policy No is 8 digits of number) and (Application No is not NA or #N/A value and Application No not starts with Contract No.)" sap:VirtualizedContainerService.HintSize="375.2,545.6" sap2010:WorkflowViewState.IdRef="Sequence_172">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="Info" Message="[&quot;[2.] - Transaction status: Business error| &quot; + row(&quot;Application No&quot;).ToString+ &quot; is invalid format.&quot;]" />
+                                                              <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_119">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">["Error: Invalid format of Application No " +row("Application No").ToString]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_120">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">[errorMessage]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_121">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                            </Sequence>
+                                                          </If.Else>
+                                                        </If>
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap2010:Annotation.AnnotationText="Policy No is not contains 8 digits of number.&#xA;1. check format Application No is tarts with Contract No?" sap:VirtualizedContainerService.HintSize="2319.2,2003.2" sap2010:WorkflowViewState.IdRef="Sequence_183">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:IsMatch sap2010:Annotation.AnnotationText="Check APP_NO is start with CONTRACT_NO(loan no)" DisplayName="Is Match" sap:VirtualizedContainerService.HintSize="2277.6,91.2" sap2010:WorkflowViewState.IdRef="IsMatch_6" Input="[row(&quot;Application No&quot;).ToString]" IsBuilderTabModified="False" Pattern="[&quot;^&quot;+ row(&quot;Loan No&quot;).ToString]" RegexOption="IgnoreCase, Compiled" Result="[IsValid_AppNo]">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:IsMatch>
+                                                  <If sap2010:Annotation.AnnotationText="" Condition="[IsValid_AppNo]" sap:VirtualizedContainerService.HintSize="2277.6,1735.2" sap2010:WorkflowViewState.IdRef="If_47">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <If.Then>
+                                                      <Sequence sap2010:Annotation.AnnotationText="Policy No is not contains 8 digits of number, Application No is starts with Contract No(valid format)" sap:VirtualizedContainerService.HintSize="1347.2,1576" sap2010:WorkflowViewState.IdRef="Sequence_179">
+                                                        <Sequence.Variables>
+                                                          <Variable x:TypeArguments="x:String" Name="SQLQuery_SelectAppNo" />
+                                                          <Variable x:TypeArguments="sd:DataTable" Name="dt_dbtableApp" />
+                                                        </Sequence.Variables>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If Condition="[row(&quot;กรมธรรม์&quot;).ToString.Equals(&quot;NA&quot;) or row(&quot;กรมธรรม์&quot;).ToString.Equals(&quot;#N/A&quot;)]" sap:VirtualizedContainerService.HintSize="1305.6,1452" sap2010:WorkflowViewState.IdRef="If_45">
+                                                          <If.Then>
+                                                            <Sequence sap2010:Annotation.AnnotationText="when Policy No is containing &quot;NA&quot; or &quot;#N/A&quot; and Application No is starts ith Contract No." sap:VirtualizedContainerService.HintSize="886.4,1292.8" sap2010:WorkflowViewState.IdRef="Sequence_177">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:ReadTextFile Content="[SQLQuery_SelectAppNo]" DisplayName="Read Text File" FileName="[Config(&quot;SelectAppNo.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="844.8,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_27" />
+                                                              <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_dbtableApp]" DisplayName="Run query" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="844.8,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_17" Sql="[SQLQuery_SelectAppNo]">
+                                                                <ui:ExecuteQuery.Parameters>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="@APPNO">[row("Application No").ToString]</InArgument>
+                                                                </ui:ExecuteQuery.Parameters>
+                                                              </ui:ExecuteQuery>
+                                                              <If sap2010:Annotation.AnnotationText="Check existence of Application No in TLT_APPSUBMIT " Condition="[dt_dbtableApp.Rows.Count = 0]" sap:VirtualizedContainerService.HintSize="844.8,918.4" sap2010:WorkflowViewState.IdRef="If_44">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <If.Then>
+                                                                  <Sequence sap2010:Annotation.AnnotationText="App No is not exists in TLT_APPSUBMIT&#xA;1.Import datatable to table TLT_APPSUBMIT&#xA;2. Stamp column &quot;Status&quot; is Complete in file TLT&#xA;3. Stamp column &quot;Process Date&quot; is now in file TLT&#xA;" sap:VirtualizedContainerService.HintSize="425.6,728" sap2010:WorkflowViewState.IdRef="Sequence_175">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:ReadTextFile Content="[SQLQuery_import]" DisplayName="Read Text File" FileName="[Config(&quot;AddTLTFilesDatatoAPPSUBMIT.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="384,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_28" />
+                                                                    <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Import to TLT_APPSUBMIT table" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="384,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_18" Sql="[SQLQuery_import]">
+                                                                      <ui:ExecuteNonQuery.Parameters>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="@POLICYNO">[row("กรมธรรม์").ToString]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="@APPNO">[row("Application No").ToString]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="@CONTRACTNO">[row("Loan No").ToString]</InArgument>
+                                                                        <InArgument x:TypeArguments="s:DateTime" x:Key="@SCANDATE">[DateTime.ParseExact(row("วันที่วางงานทีมสแกน").ToString, Config("Scandate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                        <InArgument x:TypeArguments="s:DateTime" x:Key="@APPDATE">[DateTime.ParseExact(row("วันที่รับแอพ").ToString, Config("Appdate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                      </ui:ExecuteNonQuery.Parameters>
+                                                                    </ui:ExecuteNonQuery>
+                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Info" Message="[&quot;[2.] -Transaction status: Success| Import Policy No &quot;+ row(&quot;กรมธรรม์&quot;).ToString + &quot;, Application No &quot;+ row(&quot;Application No&quot;).ToString  + &quot; to TLT_APPSUBMIT complete.&quot;]" />
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_122">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">["Complete: Import data of Poicy No " + row("กรมธรรม์").ToString + " success."]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_123">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                  </Sequence>
+                                                                </If.Then>
+                                                                <If.Else>
+                                                                  <Sequence sap2010:Annotation.AnnotationText="This Application No is exists in table TLT_APPSUBMIT. and Application No is &quot;NA&quot; or &quot;#N/A&quot; value." sap:VirtualizedContainerService.HintSize="375.2,529.6" sap2010:WorkflowViewState.IdRef="Sequence_176">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Info" Message="[&quot;[2.] - Transaction status: Business error| &quot; + row(&quot;Application No&quot;).ToString+ &quot; already have record in table [TLT_APPSUBMIT].&quot;]" />
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_124">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">["Error: "+ row("Application No").ToString+ " already have record in table [TLT_APPSUBMIT]."]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_125">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[errorMessage]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_126">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                  </Sequence>
+                                                                </If.Else>
+                                                              </If>
+                                                            </Sequence>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Sequence sap2010:Annotation.AnnotationText="When (Policy No is not 8 digits of number and not &quot;NA&quot; or &quot;#N/A&quot;)and (Application No is starts with Contract No.)" sap:VirtualizedContainerService.HintSize="375.2,529.6" sap2010:WorkflowViewState.IdRef="Sequence_178">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="Info" Message="[&quot;[2.] - Transaction status: Business error| Invalid format of Policy No &quot; +row(&quot;กรมธรรม์&quot;).ToString]" />
+                                                              <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_127">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">["Error: Invalid format of Policy No " +row("กรมธรรม์").ToString]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_128">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">["Error: Invalid format of Policy No"]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_129">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                            </Sequence>
+                                                          </If.Else>
+                                                        </If>
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence sap2010:Annotation.AnnotationText="Policy No is not contains 8 digits of number, Application No is not starts with Contract No(invalid format)" sap:VirtualizedContainerService.HintSize="886.4,950.4" sap2010:WorkflowViewState.IdRef="Sequence_182">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If Condition="[(row(&quot;กรมธรรม์&quot;).ToString.Equals(&quot;NA&quot;) or row(&quot;กรมธรรม์&quot;).ToString.Equals(&quot;#N/A&quot;)) and (row(&quot;Application No&quot;).ToString.Equals(&quot;NA&quot;) or row(&quot;Application No&quot;).ToString.Equals(&quot;#N/A&quot;))]" sap:VirtualizedContainerService.HintSize="844.8,826.4" sap2010:WorkflowViewState.IdRef="If_46">
+                                                          <If.Then>
+                                                            <Sequence sap2010:Annotation.AnnotationText="Both Policy No and App No is NA" sap:VirtualizedContainerService.HintSize="425.6,667.2" sap2010:WorkflowViewState.IdRef="Sequence_180">
+                                                              <Sequence.Variables>
+                                                                <Variable x:TypeArguments="x:String" Name="SQLQuery_insertNullvalue" />
+                                                              </Sequence.Variables>
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:ReadTextFile Content="[SQLQuery_insertNullvalue]" DisplayName="Read Text File" FileName="[Config(&quot;InsertNullPolicyApp.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="384,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_29" />
+                                                              <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Run query" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="384,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_18" Sql="[SQLQuery_insertNullvalue]">
+                                                                <ui:ExecuteQuery.Parameters>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="@CONTRACTNO">[row("Loan No").ToString]</InArgument>
+                                                                  <InArgument x:TypeArguments="s:DateTime" x:Key="@SCANDATE">[DateTime.ParseExact(row("วันที่วางงานทีมสแกน").ToString, Config("Scandate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                  <InArgument x:TypeArguments="s:DateTime" x:Key="@APPDATE">[DateTime.ParseExact(row("วันที่รับแอพ").ToString, Config("Appdate_format").ToString, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                                                                </ui:ExecuteQuery.Parameters>
+                                                              </ui:ExecuteQuery>
+                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="Info" Message="[&quot;[2.] -Transaction status: Success| Import Policy No &quot;+ row(&quot;กรมธรรม์&quot;).ToString + &quot;, Application No &quot;+ row(&quot;Application No&quot;).ToString  + &quot; to TLT_APPSUBMIT complete.&quot;]" />
+                                                              <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_130">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">["Complete: Import data of Poicy No " + row("กรมธรรม์").ToString + " success."]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_131">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                            </Sequence>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Sequence sap2010:Annotation.AnnotationText="Both Policy No and App No is invalid format and not NA or #N/A" sap:VirtualizedContainerService.HintSize="375.2,529.6" sap2010:WorkflowViewState.IdRef="Sequence_181">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[&quot;[2.]- Transaction status: Business error | Both of Policy No &quot; + row(&quot;กรมธรรม์&quot;).ToString + &quot; and Application No &quot; +   row(&quot;Application No&quot;).ToString + &quot;.&quot; + &quot; are invalid format.Does not import to table.&quot;]" />
+                                                              <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_132">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">["Error: Both of Policy No " + row("กรมธรรม์").ToString + " and Application No " +   row("Application No").ToString + "." + " are invalid format.Does not import to table."]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_133">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">[errorMessage]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_134">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Object">[row("Process Date")]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:Object">[DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")]</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                            </Sequence>
+                                                          </If.Else>
+                                                        </If>
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:ForEachRow.Body>
+                                  </ui:ForEachRow>
+                                  <ui:ReadTextFile Content="[SQL_updatetoNULL]" DisplayName="Read Text File" FileName="[Config(&quot;UpdatetoNull.txt&quot;).ToString]" sap:VirtualizedContainerService.HintSize="5310.4,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_31" />
+                                  <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Run command" ExistingDbConnection="[DBConnect]" sap:VirtualizedContainerService.HintSize="5310.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_19" Sql="[SQL_updatetoNULL]">
+                                    <ui:ExecuteNonQuery.Parameters>
+                                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                    </ui:ExecuteNonQuery.Parameters>
+                                  </ui:ExecuteNonQuery>
+                                  <ui:FilterDataTable DataTable="[dt_TLTdata]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="5310.4,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_filterStatus]" SelectColumnsMode="Keep">
+                                    <ui:FilterDataTable.Filters>
+                                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                        <ui:FilterOperationArgument BooleanOperator="And" Operator="STARTSWITH">
+                                          <ui:FilterOperationArgument.Column>
+                                            <InArgument x:TypeArguments="x:String">["Status"]</InArgument>
+                                          </ui:FilterOperationArgument.Column>
+                                          <ui:FilterOperationArgument.Operand>
+                                            <InArgument x:TypeArguments="x:String">["Error"]</InArgument>
+                                          </ui:FilterOperationArgument.Operand>
+                                        </ui:FilterOperationArgument>
+                                      </scg:List>
+                                    </ui:FilterDataTable.Filters>
+                                    <ui:FilterDataTable.SelectColumns>
+                                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                        <x:Null />
+                                      </scg:List>
+                                    </ui:FilterDataTable.SelectColumns>
+                                  </ui:FilterDataTable>
+                                  <If Condition="[dt_filterStatus.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="5310.4,1668.8" sap2010:WorkflowViewState.IdRef="If_23">
+                                    <If.Then>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="660.8,1509.6" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:PathExists DisplayName="Path Exists" Exists="[CheckFIileExists]" sap:VirtualizedContainerService.HintSize="619.2,90.4" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[Config(&quot;TLTFilesPath_Error&quot;).ToString + fileName]" PathType="File" />
+                                        <If Condition="[CheckFIileExists]" sap:VirtualizedContainerService.HintSize="619.2,612" sap2010:WorkflowViewState.IdRef="If_24">
+                                          <If.Else>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="475.2,452.8" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Config(&quot;TLTFilesPath_Error&quot;).ToString + fileName]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="CopyFile_4" Overwrite="False" Path="[Config(&quot;TLTFilesPath_Template&quot;).ToString]" />
+                                              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Config(&quot;TLTFilesPath_Error&quot;).ToString +  fileNameWithoutExtension + &quot;_error&quot; + &quot;.xlsx&quot;]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="CopyFile_6" Overwrite="False" Path="[Config(&quot;TLTFilesPath_Template&quot;).ToString]" />
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
+                                        <ui:WriteRange AddHeaders="False" sap2010:Annotation.AnnotationText="Put file error in folder Error.&#xA;" DataTable="[dt_TLTdata]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="619.2,160" sap2010:WorkflowViewState.IdRef="WriteRange_7" SheetName="ไฟล์วางรายชื่อให้ทีม CMO" StartingCell="A2" WorkbookPath="[Config(&quot;TLTFilesPath_Error&quot;).ToString + fileName]">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:WriteRange>
+                                        <ui:WriteRange AddHeaders="False" sap2010:Annotation.AnnotationText="Put file error in folder Error.&#xA;" DataTable="[dt_filterStatus]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="619.2,160" sap2010:WorkflowViewState.IdRef="WriteRange_10" SheetName="ไฟล์วางรายชื่อให้ทีม CMO" StartingCell="A2" WorkbookPath="[Config(&quot;TLTFilesPath_Error&quot;).ToString + fileNameWithoutExtension + &quot;_error&quot; + &quot;.xlsx&quot;]">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:WriteRange>
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendErrorMail workflow" sap:VirtualizedContainerService.HintSize="619.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\NotiEmail\SendErrorMail.xaml">
+                                          <ui:InvokeWorkflowFile.Arguments>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFolder">[ConfigFilePath]</InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Config">[Config]</InArgument>
+                                            <InArgument x:TypeArguments="sg:CultureInfo" x:Key="in_thisCultureInfo">[CultureInfo]</InArgument>
+                                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_DateTime_ProcessStart">[ProcessStartTime]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_str_ErrorMessage">["Error Occurred in Process: File "+ fileName + " " + errorMessage]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_SMTPPort">[CInt(SMTPPort)]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_SMTPServer">[SMTPServer]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_SMTPUsername">[SMTPUsername]</InArgument>
+                                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SMTPPassword">[SMTPPassword1]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_TempFilePath">[Config("TLTFilesPath_Error").ToString + fileNameWithoutExtension + "_error" + ".xlsx"]</InArgument>
+                                          </ui:InvokeWorkflowFile.Arguments>
+                                        </ui:InvokeWorkflowFile>
+                                        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="619.2,80.8" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[AllFiles(FilesIndex)]" />
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="660.8,1198.4" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:PathExists DisplayName="Path Exists" Exists="[CheckFIileExists]" sap:VirtualizedContainerService.HintSize="619.2,90.4" sap2010:WorkflowViewState.IdRef="PathExists_5" Path="[Config(&quot;TLTFilesPath_Complete&quot;).ToString + fileName]" PathType="File" />
+                                        <If Condition="[CheckFIileExists]" sap:VirtualizedContainerService.HintSize="619.2,412" sap2010:WorkflowViewState.IdRef="If_25">
+                                          <If.Else>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="475.2,252.8" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Config(&quot;TLTFilesPath_Complete&quot;).ToString + fileName]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="CopyFile_5" Overwrite="False" Path="[Config(&quot;TLTFilesPath_Template&quot;).ToString]" />
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
+                                        <ui:WriteRange AddHeaders="False" DataTable="[dt_TLTdata]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="619.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_8" SheetName="ไฟล์วางรายชื่อให้ทีม CMO" StartingCell="A2" WorkbookPath="[Config(&quot;TLTFilesPath_Complete&quot;).ToString + fileName]" />
+                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendCompleteMail workflow" sap:VirtualizedContainerService.HintSize="619.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\NotiEmail\SendCompleteMail.xaml">
+                                          <ui:InvokeWorkflowFile.Arguments>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFolder">[ConfigFilePath]</InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Config">[Config]</InArgument>
+                                            <InArgument x:TypeArguments="sg:CultureInfo" x:Key="in_thisCultureInfo">[CultureInfo]</InArgument>
+                                            <InArgument x:TypeArguments="s:DateTime" x:Key="in_DateTime_ProcessStart">[ProcessStartTime]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_SMTPPort">[SMTPPort]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_SMTPServer">[SMTPServer]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_SMTPUsername">[SMTPUsername]</InArgument>
+                                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SMTPPassword">[SMTPPassword1]</InArgument>
+                                          </ui:InvokeWorkflowFile.Arguments>
+                                        </ui:InvokeWorkflowFile>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="619.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[AllFiles(FilesIndex).ToString + &quot; will move to folder Completed&quot;]" />
+                                        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="619.2,80.8" sap2010:WorkflowViewState.IdRef="Delete_2" Path="[AllFiles(FilesIndex)]" />
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
+                                  <Assign DisplayName="Update TLT file index" sap:VirtualizedContainerService.HintSize="5310.4,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[FilesIndex]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[FilesIndex + 1]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </ui:InterruptibleWhile.Body>
+                              <ui:InterruptibleWhile.Condition>
+                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="FilesIndex &lt; AllFiles.Length" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                              </ui:InterruptibleWhile.Condition>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:InterruptibleWhile>
+                            <Sequence sap2010:Annotation.AnnotationText="Disconnect Server 184 &#xA;DB: DM_ALT after upload all TLT files into table TLT_APPSUBMIT" DisplayName="disconnect db" sap:VirtualizedContainerService.HintSize="5387.2,175.2" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:DatabaseDisconnect DatabaseConnection="[DBConnect]" DisplayName="Disconnect from database" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_2" />
+                            </Sequence>
+                          </Sequence>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="5432,132.8" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="228.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[exception.Message + exception.Source]" />
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                    </Sequence>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">0,835.6</av:Point>
+                            <av:Size x:Key="ShapeSize">200,128.8</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence sap2010:Annotation.AnnotationText="Remove all files in path where last odified date is older than purging period." DisplayName="[4.] Purging file" sap:VirtualizedContainerService.HintSize="200,128.8" sap2010:WorkflowViewState.IdRef="Sequence_152">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke PurgingFile workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Function\PurgingFile.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_FolderPath">[Config("TLTFilesPath_Complete").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="in_PurgingPeriod">[CInt(Config("ArchivePeriod").Trim)]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke PurgingFile workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Function\PurgingFile.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_FolderPath">[Config("TLTFilesPath_Error").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:Int32" x:Key="in_PurgingPeriod">[CInt(Config("ArchivePeriod").Trim)]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                        </Sequence>
+                      </FlowStep>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowDecision.True>
+                <FlowDecision.False>
+                  <FlowStep x:Name="__ReferenceID2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">420,669.6</av:Point>
+                        <av:Size x:Key="ShapeSize">200,112.8</av:Size>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence sap2010:Annotation.AnnotationText="No file occur in path&#xA;1. Send error mail" DisplayName="[3.] - Send Summary mail" sap:VirtualizedContainerService.HintSize="200,112.8" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="378.4,60" sap2010:WorkflowViewState.IdRef="Assign_104">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["Error Occur: Sharedrive path "+ Config("TLTFilesPath_Input").ToString +" Have no file"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendErrorMail - without file workflow" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\NotiEmail\SendErrorMail - without file.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFolder">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ConfigFilePath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Config">
+                            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="Config" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="sg:CultureInfo" x:Key="in_thisCultureInfo">
+                            <mva:VisualBasicValue x:TypeArguments="sg:CultureInfo" ExpressionText="CultureInfo" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_DateTime_ProcessStart">
+                            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="ProcessStartTime" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_ErrorMessage">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="errorMessage" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_SMTPPort">
+                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="SMTPPort" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_SMTPServer">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SMTPServer" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_SMTPUsername">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SMTPUsername" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SMTPPassword">
+                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="SMTPPassword1" />
+                          </InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
+                  </FlowStep>
+                </FlowDecision.False>
+              </FlowDecision>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+    </Flowchart>
+  </Sequence>
+</Activity>
